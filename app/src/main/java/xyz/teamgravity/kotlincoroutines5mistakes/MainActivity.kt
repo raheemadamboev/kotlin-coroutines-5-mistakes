@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.executeB.setOnClickListener {
             lifecycleScope.launch {
-                mistake2()
+                mistake3()
             }
         }
     }
@@ -35,5 +35,9 @@ class MainActivity : AppCompatActivity() {
     private suspend fun mistake2() {
         //mistakeDoSomething()
         doSomething()
+    }
+
+    private suspend fun mistake3() {
+        println("raheem: ${doNetworkCall().getOrNull()}")
     }
 }
