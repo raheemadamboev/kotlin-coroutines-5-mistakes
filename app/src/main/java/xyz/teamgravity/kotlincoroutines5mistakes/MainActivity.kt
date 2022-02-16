@@ -18,7 +18,7 @@ import xyz.teamgravity.kotlincoroutines5mistakes.databinding.ActivityMainBinding
         binding.executeB.setOnClickListener {
             lifecycleScope.launch {
                 println("raheem: started")
-                getCarNames((1..10).toList())
+                println("raheem: ${getCarNames((1..10).toList())}")
                 println("raheem: finished")
             }
         }
