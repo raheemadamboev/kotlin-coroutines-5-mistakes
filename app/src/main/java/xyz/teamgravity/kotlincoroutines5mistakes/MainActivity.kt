@@ -1,6 +1,7 @@
 package xyz.teamgravity.kotlincoroutines5mistakes
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
@@ -10,15 +11,20 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val viewmodel by viewModels<Mistake5>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.executeB.setOnClickListener {
-            lifecycleScope.launch {
-                mistake4()
-            }
+
+//            lifecycleScope.launch {
+//                mistake4()
+//            }
+
+            mistake5()
         }
     }
 
@@ -44,5 +50,10 @@ class MainActivity : AppCompatActivity() {
     private suspend fun mistake4() {
         //mistakeRiskyTask()
         riskyTask()
+    }
+
+    private fun mistake5() {
+        //lifecycleScope.launch { viewmodel.mistakePostToApi() }
+        viewmodel.postToApi()
     }
 }
