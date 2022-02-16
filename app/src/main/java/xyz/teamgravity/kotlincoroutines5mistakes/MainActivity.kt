@@ -1,12 +1,12 @@
- package xyz.teamgravity.kotlincoroutines5mistakes
+package xyz.teamgravity.kotlincoroutines5mistakes
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import xyz.teamgravity.kotlincoroutines5mistakes.databinding.ActivityMainBinding
 
- class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -17,10 +17,14 @@ import xyz.teamgravity.kotlincoroutines5mistakes.databinding.ActivityMainBinding
 
         binding.executeB.setOnClickListener {
             lifecycleScope.launch {
-                println("raheem: started")
-                println("raheem: ${getCarNames((1..10).toList())}")
-                println("raheem: finished")
+                mistake1()
             }
         }
+    }
+
+    private suspend fun mistake1() {
+        println("raheem: started")
+        println("raheem: ${getCarNames((1..10).toList())}")
+        println("raheem: finished")
     }
 }
