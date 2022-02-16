@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.executeB.setOnClickListener {
             lifecycleScope.launch {
-                mistake1()
+                mistake2()
             }
         }
     }
@@ -30,5 +30,10 @@ class MainActivity : AppCompatActivity() {
         println("raheem: started")
         println("raheem: ${mistakeGetCarNames((1..10).toList())}")
         println("raheem: finished")
+    }
+
+    private suspend fun mistake2() {
+        //mistakeDoSomething()
+        doSomething()
     }
 }
