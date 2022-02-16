@@ -26,5 +26,9 @@ class MainActivity : AppCompatActivity() {
         println("raheem: started")
         println("raheem: ${getCarNames((1..10).toList())}")
         println("raheem: finished")
+
+        println("raheem: started")
+        println("raheem: ${mistakeGetCarNames((1..10).toList())}")
+        println("raheem: finished")
     }
 }
